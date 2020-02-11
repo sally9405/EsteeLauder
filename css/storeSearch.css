@@ -1,0 +1,206 @@
+#container{
+    height: 700px;
+}
+.storeSearch{
+    height: auto;
+    padding-top: 69px;
+    margin:0;
+}
+.storeSearch .center{
+    width: 1000px;
+    margin: 0 auto;
+}
+.search{
+    border-bottom: 1px solid black;
+    padding: 20px 0;
+    line-height: 2;
+}
+.search>div{
+    width: 150px;
+    height: 29px;
+    float: left;
+    text-align: center;
+    border: 1px solid black; 
+    position:relative;
+    box-sizing: border-box;
+}
+.search .sTitle{
+    display: block;
+    box-sizing: border-box;
+}
+.search .sTitle.acvtive{
+    
+}
+.search>div>ul{
+    width:150px;
+    position:absolute;
+    background: #fff;
+/*    top: 29px;*/
+    left: -1px;
+    z-index: 1000;
+    display: none;
+    box-sizing: border-box;
+}
+.citySearch{
+    margin-left: 325px;
+}
+.townSearch{
+    margin-left: 50px;
+}
+.search li{
+     border: 1px solid black;
+}
+.search .citySearch li:first-child{
+     border-top: none;
+     border-bottom: none;
+}
+.search .townSearch li:first-child{
+    border-top: none;
+}
+.search .citySearch li.active,
+.search .townSearch li.active{
+    border-top: none;
+    border-bottom: 1px solid black;
+}
+/*map*/
+.mapWrap{
+    overflow: hidden;
+}
+.place{
+    display: none;
+    width: auto;
+    float: left;
+    margin-top: 40px;
+    position:relative;
+}
+.place:first-child{
+    display: block;
+}
+
+.place>li{
+    padding: 10px 10px 10px 60px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+
+.mapAddr>li{
+    position: relative;
+}
+.mapAddr>.pickImg{
+    position: absolute;
+    left: 20px;
+    width: 23px;
+    height: 33px;
+}
+.mapAddr>.pickImg1.active{ background: url(../images/map1_a.jpg);}
+.mapAddr>.pickImg1{ background: url(../images/map1.jpg);}
+.mapAddr>.pickImg2.active{ background: url(../images/map2_a.png);}
+.mapAddr>.pickImg2{ background: url(../images/map2.jpg);}
+.mapAddr>.pickImg3.active{ background: url(../images/map3_a.jpg);}
+.mapAddr>.pickImg3{ background: url(../images/map3.jpg);}
+#map{
+    float: right;
+    width:600px;
+    height:400px;
+    margin: 30px 50px 0 0;
+}
+
+@media screen and (max-width:1023px){
+    .headaer{
+        width: 100%;
+    }
+    #container {
+        height: 830px;
+    }
+        .storeSearch .center{
+        width: 70vw;
+    }
+    .citySearch{
+        margin-left: 25%;
+    }
+    .search>div{
+        width: 20%;
+    }
+    .search>div>ul{
+        width: 14vw;
+    }
+    .mapWrap{
+        overflow: hidden;
+/*        width: 600px;*/
+        height: auto;
+    }
+    .place{
+        margin: 30px auto;
+        width: 220px;
+        float:none;
+/*
+        left: 50%;
+        transform: translateX(-50%);
+*/
+    }
+    .mapAddr>li{
+        display: none;
+    }
+
+    .mapAddr>.pickImg{
+        display: block;
+        width: 20px;
+        height: 25px;
+    }
+    .mapAddr>.pickImg1.active,
+    .mapAddr>.pickImg1,
+    .mapAddr>.pickImg2.active,
+    .mapAddr>.pickImg2,
+    .mapAddr>.pickImg3.active,
+    .mapAddr>.pickImg3{ 
+        background-size: 20px 25px;
+    }
+    .mapAddr>.mapTitle{
+        display: block;
+    }
+    #map{
+        width:100%;
+        margin:0;
+        float:none;
+
+
+    }
+}
+@media screen and (max-width:600px){
+    .search>div {
+        width: 20vw;
+    }    
+    .citySearch {
+        margin-left: 15%;
+    }
+    .search>div>ul {
+        width: 20vw;
+    }
+    #map{
+        width: 450px;
+    }
+}
+@media screen and (max-width:500px){
+    #container {
+        height: 730px;
+    }
+    #map{
+        width: 320px;
+        height: 320px;
+    }
+}
+@media screen and (max-width:350px){
+    .search>div {
+        width: 23vw;
+    } 
+    .citySearch {
+        margin-left: 10%;
+    }
+    .search>div>ul {
+        width: 23vw;
+    }
+    #map{
+        width: 290px;
+        height: 290px;
+    }
+}

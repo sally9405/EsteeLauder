@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>매장찾기</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common1.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/storeSearch.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=09b8cc01401c39417627c28eaa79adf3"></script>
+    <script src="js/storeSearch.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <p class="hamBtn active"><a href="#"></a></p>
+
+        <div class="center">
+            <h1 class="logo"><a href="index.html"><img src="images/logo.png" alt="logo"></a></h1>
+            <!--   gnb   -->
+            <ul class="gnb">
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">서비스예약</a></li>
+            </ul>
+            <div class="nav">
+                <ul id="nav" class="clearFix">
+                    <li class="subWrap1"><a href="#">신제품</a></li>
+                    <li class="subWrap2"><a href="#">베스트셀러</a></li>
+                    <li class="subWrap3"><a href="#">스킨케어</a>
+                        <ul class="sub sub3 clearFix">
+                            <li>
+                                <p>카테고리별</p>
+                                <ul>
+                                    <li><a href="#">클렌저/토너</a></li>
+                                    <li><a href="#">리페어 세럼/에센스</a></li>
+                                    <li><a href="#">로션/크림</a></li>
+                                    <li><a href="#">페이스 오일</a></li>
+                                    <li><a href="#">아이 케어</a></li>
+                                    <li><a href="#">스페셜 케어/마스크</a></li>
+                                    <li><a href="#">선 케어</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>피부고민별</p>
+                                <ul>
+                                    <li><a href="#">리페어</a></li>
+                                    <li><a href="#">화이트닝</a></li>
+                                    <li><a href="#">주름완화</a></li>
+                                    <li><a href="#">탄력/리프팅</a></li>
+                                    <li><a href="#">피부결/모공</a></li>
+                                    <li><a href="#">수분/생기</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>컬렉션보기</p>
+                                <ul>
+                                    <li><a href="#">갈색병 리페어</a></li>
+                                    <li><a href="#">마이크로 에센스</a></li>
+                                    <li><a href="#">수프림</a></li>
+                                    <li><a href="#">퍼펙셔니스트</a></li>
+                                    <li><a href="#">크레센트 화이트</a></li>
+                                    <li><a href="#">뉴트리셔스</a></li>
+                                    <li><a href="#">리질리언스</a></li>
+                                    <li><a href="#">클리어 디퍼런스</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="subWrap4"><a href="#">메이크업</a>
+                        <ul class="sub sub4">
+                            <li>
+                                <p>립</p>
+                                <ul>
+                                    <li><a href="#">립스틱</a></li>
+                                    <li><a href="#">리퀴드 립</a></li>
+                                    <li><a href="#">립 글로스</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>아이</p>
+                                <ul>
+                                    <li><a href="#">아이섀도우</a></li>
+                                    <li><a href="#">아이브로우</a></li>
+                                    <li><a href="#">아이라이너</a></li>
+                                    <li><a href="#">마스카라</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>페이스</p>
+                                <ul>
+                                    <li><a href="#">파운데이션</a></li>
+                                    <li><a href="#">컨실러</a></li>
+                                    <li><a href="#">파우더</a></li>
+                                    <li><a href="#">프라이머</a></li>
+                                    <li><a href="#">비비크림</a></li>
+                                    <li><a href="#">블러쉬</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>브러쉬&amp;기타</p>
+                                <ul>
+                                    <li><a href="#">브러쉬</a></li>
+                                    <li><a href="#">액세서리</a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>컬렉션 보기</p>
+                                <ul>
+                                    <li><a href="#">더블 웨어</a></li>
+                                    <li><a href="#">퓨처리스트</a></li>
+                                    <li><a href="#">퓨어 컬러 엔비</a></li>
+                                    <li><a href="#">퓨어 컬러 러브</a></li>
+                                    <li><a href="#">엔비 립 케어</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="subWrap5"><a href="#">향수</a>
+                        <ul class="sub sub5">
+                            <li>
+                                <p>컬렉션보기</p>
+                                <ul>
+                                    <li><a href="#">뷰티플 벨</a></li>
+                                    <li><a href="#">모던 뮤즈</a></li>
+                                    <li><a href="#">플레져</a></li>
+                                    <li><a href="#">뷰티풀</a></li>
+                                    <li><a href="#">화이트 린넨</a></li>
+                                    <li><a href="#">센슈어스</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="subWrap6"><a href="#">리뉴트리브</a>
+                        <ul class="sub sub6">
+                            <li>
+                                <p>라인별</p>
+                                <ul>
+                                    <li><a href="#">다이아몬드</a></li>
+                                    <li><a href="#">얼티미트 리프트</a></li>
+                                    <li><a href="#">래디언트 화이트</a></li>
+                                    <li><a href="#">인텐시브 에이지-리뉴얼</a></li>
+                                    <li><a href="#">리플래니싱 컴포트</a></li>
+                                    <li><a href="#">리-크리에이션</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>스킨케어</p>
+                                <ul>
+                                    <li><a href="#">클렌저/토너</a></li>
+                                    <li><a href="#">에센스/세럼</a></li>
+                                    <li><a href="#">수퍼 크림</a></li>
+                                    <li><a href="#">아이 케어</a></li>
+                                    <li><a href="#">스페셜 케어</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>메이크업</p>
+                                <ul>
+                                    <li><a href="#">파운데이션</a></li>
+                                    <li><a href="#">파우더</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="subWrap7"><a href="#">에어린</a>
+                        <ul class="sub sub7">
+                            <li>
+                                <p>에어린 뷰티</p>
+                                <ul>
+                                    <li><a href="#">향수 컬렉션</a></li>
+                                    <li><a href="#">AERIN BEAUTY</a></li>
+                                    <li><a href="#">WORLD OF AERIN</a></li>
+                                    <li><a href="#">ABOUT AERIN</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <p>컬렉션 보기</p>
+                                <ul>
+                                    <li><a href="#">리모네 디 시칠리아</a></li>
+                                    <li><a href="#">에게 블러썸</a></li>
+                                    <li><a href="#">히비스커스 팜</a></li>
+                                    <li><a href="#">튜베로즈 컬렉션</a></li>
+                                    <li><a href="#">로즈 드 그라스</a></li>
+                                    <li><a href="#">로즈 컬렉션</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <ul class="rightNav">
+                <li><a href="#"><img src="images/btn_cart.png" alt="장바구니"></a></li>
+                <li><a href="#"><img src="images/btn_search.png" alt="검색"> </a></li>
+            </ul>
+        </div>
+        <!--   nav   -->
+        <div class="navBg"></div>
+        <div class="center">
+
+        </div>
+    </header>
+    <div id="container">
+
+        <section class="storeSearch">
+            <h2 class="title">매장 찾기</h2>
+            <div class="center">
+                <div class="search clearFix">
+                    <div class="citySearch">
+                        <p class="sTitle"><a href="#">시/도</a></p>
+                        <ul class="city">
+                            <li><a href="#">서울특별시</a></li>
+                            <li><a href="#">경기도</a></li>
+                        </ul>
+                    </div>
+                    <div class="townSearch">
+                        <p class="sTitle"><a href="#">지역</a></p>
+                        <ul class="town">
+                            <li><a href="#">영등포구</a></li>
+                        </ul>
+                        <ul class="town">
+                            <li><a href="#">부천시</a></li>
+                        </ul>
+    
+                    </div>
+
+                </div>
+                <div class="mapWrap">
+                    <ul class="place">
+                        <li><a href="#">
+                                <ul class="mapAddr">
+                                    <li class="pickImg pickImg1 active"></li>
+                                    <li class="mapTitle">시코르 타임스퀘어점</li>
+                                    <li>서울특별시 영등포구 영중로15, </li>
+                                    <li>타임스퀘어 3층</li>
+                                    <li>영등포구, 서울 07305</li>
+                                    <li>02-2638-2362</li>
+                                </ul>
+                            </a></li>
+                        <li><a href="#">
+                                <ul class="mapAddr">
+                                    <li class="pickImg pickImg2"></li>
+                                    <li class="mapTitle">신세계백화점 영등포점</li>
+                                    <li>서울특별시 영등포구 영중로 9 </li>
+                                    <li>(영등포동4가)</li>
+                                    <li>영등포구, 서울 07305</li>
+                                    <li>02-2639-4125/4124,4169</li>
+                                </ul>
+                            </a></li>
+                        <li><a href="#">
+                                <ul class="mapAddr">
+                                    <li class="pickImg pickImg3"></li>
+                                    <li class="mapTitle">롯데백화점 영등포점</li>
+                                    <li>서울특별시 영등포구 경인로 </li>
+                                    <li>846 (영등포동, 영등포민자역사)</li>
+                                    <li>영등포구, 서울 07306</li>
+                                    <li>2164-5032/3</li>
+                                </ul>
+                            </a></li>
+                    </ul>
+                    <ul class="place">
+                        <li><a href="#">
+                                <ul class="mapAddr">
+                                    <li class="pickImg pickImg1 active"></li>
+                                    <li class="mapTitle">현대백화점 중동점</li>
+                                    <li>경기도 부천시 원미구 길주로 180 (중동)</li>
+                                    <li>부천시, 경기 14546</li>
+                                    <li>032-623-2139, 623-3503</li>
+                                    
+                                </ul>
+                            </a></li>
+                        <li><a href="#">
+                                <ul class="mapAddr">
+                                    <li class="pickImg pickImg2"></li>
+                                    <li class="mapTitle">롯데스퀘어 중동점</li>
+                                    <li>경기도 부천시 원미구 길주로 300 (중동) </li>
+                                    <li>부천시, 경기 14548</li>
+                                    <li>032-320-7180/1</li>
+                                </ul>
+                            </a></li>
+                    </ul>
+                    <div id="map"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="center">
+            <ul class="footMenu">
+                <li>
+                    <a href="#">브랜드스토리</a>
+                </li>
+                <li>
+                    <a href="#">고객센터</a>
+                </li>
+                <li>
+                    <a href="storeSearch.html">매장찾기</a>
+                </li>
+            </ul>
+            <ul class="footInfo">
+                <li><a href="#">개인정보 처리방침</a></li>
+                <li><a href="#">이용약관</a></li>
+            </ul>
+            <ul class="sns">
+                <li><a href="#"><img src="images/btn_facebook.png" alt=""></a></li>
+                <li><a href="#"><img src="images/btn_insta.png" alt=""></a></li>
+                <li><a href="#"><img src="images/btn_youtube.png" alt=""></a></li>
+            </ul>
+            <address>
+                <span>이엘씨에이한국(유) 대표 SLAVIN PAUL</span>
+                <span>서울시 강남구 강남대로 382(역삼동) 메리츠 타워 9층, 06232</span>
+                <br>
+                <span>사업자등록번호: 211-81-71889</span>
+                <br>
+                <span>고객관리지원팀: 02-6971-3203</span>
+                <span>user_support@kr.estee.com</span>
+                <br>
+                <span>호스팅서비스 사업자: ㈜엘지유플러스</span>
+                <span>통신판매업신고: 강남 15737호</span>
+                <p class="copy">© Estée Lauder Inc</p>
+            </address>
+        </div>
+    </footer>
+    <p class="top"><a href="#"><img src="images/top.png" alt="top"></a></p>
+    <div class="fix">
+        <ul class="fixed">
+            <li><a href="#"><img src="images/person1.svg" alt="로그인"><p>로그인</p></a></li>
+            <li><a href="#"><img src="images/fixed_menu.png" alt="메뉴"><p>메뉴</p></a></li>
+            <li><a href="storeSearch.html"><img src="images/fixed_marker.png" alt="검색"><p>매장찾기</p></a></li>
+            <li><a href="#"><img src="images/fixed_cart.png" alt="장바구니"><p>장바구니</p></a></li>
+        </ul>
+    </div>
+</body></html>
